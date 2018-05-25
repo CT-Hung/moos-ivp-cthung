@@ -1,0 +1,18 @@
+//--------------------------------------------------
+// uFldHazardMgr configuration block from plugin
+
+ProcessConfig = uFldHazardMgrX
+{
+  AppTick   = 2
+  CommsTick = 2
+
+#ifdef VNAME VNAME1
+  swath_width = 50
+  dest_name   = $(VNAME2)
+#elseifdef VNAME VNAME2
+  swath_width = 10
+  dest_name   = $(VNAME1)
+#endif
+  sensor_pd   = 0.7
+  report_name = $(VNAME)
+}

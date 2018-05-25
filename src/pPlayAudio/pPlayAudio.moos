@@ -1,0 +1,19 @@
+//------------------------------------------------
+// pPlayAudio config block
+
+ServerHost = localhost
+ServerPort = 9000
+Community = test
+
+ProcessConfig = ANTLER
+{
+  Run = MOOSDB @ NewConsole = false
+  Run = pPlayAudio @ NewConsole = false
+}
+
+ProcessConfig = pPlayAudio
+{
+   AppTick   = 1
+   CommsTick = 1
+}
+

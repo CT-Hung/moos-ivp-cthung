@@ -1,0 +1,30 @@
+
+--This line, and those below, will be ignored--
+
+A    lab_11
+A    lab_11/simple_mission
+AM   lab_11/simple_mission/clean.sh
+A    lab_11/simple_mission/hazards.txt
+A    lab_11/simple_mission/hazards_01.txt
+A    lab_11/simple_mission/hazards_02.txt
+A    lab_11/simple_mission/hazards_03.txt
+A    lab_11/simple_mission/hazards_04.txt
+AM   lab_11/simple_mission/launch.sh
+AM   lab_11/simple_mission/launch_shoreside.sh
+AM   lab_11/simple_mission/launch_vehicle.sh
+A    lab_11/simple_mission/meta_shoreside.moos
+A    lab_11/simple_mission/meta_vehicle.bhv
+A    lab_11/simple_mission/meta_vehicle.moos
+A    lab_11/simple_mission/plug_origin_warp.moos
+A    lab_11/simple_mission/plug_pEchoVar.moos
+A    lab_11/simple_mission/plug_pHelmIvP.moos
+A    lab_11/simple_mission/plug_pHostInfo.moos
+A    lab_11/simple_mission/plug_pLogger.moos
+A    lab_11/simple_mission/plug_pMarinePID.moos
+A    lab_11/simple_mission/plug_pNodeReporter.moos
+A    lab_11/simple_mission/plug_pShare.moos
+A    lab_11/simple_mission/plug_uFldHazardMgr.moos
+A    lab_11/simple_mission/plug_uFldMessageHandler.moos
+A    lab_11/simple_mission/plug_uFldNodeBroker.moos
+A    lab_11/simple_mission/plug_uProcessWatch.moos
+A    lab_11/simple_mission/plug_uSimMarine.moos

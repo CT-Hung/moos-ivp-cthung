@@ -1,0 +1,44 @@
+//------------------------------------------------
+ServerHost = localhost
+ServerPost = 9000
+Community = lll
+
+ProcessConfig = ANTLER
+{
+	Run = MOOSDB @ NewConsole = false
+	Run = uXMS @ NewConsole = true
+	Run = pGenPath @ NewConsole = false
+	Run = uTimerScript @ NewConsole = false
+
+}
+// uTimerScript
+ProcessConfig = uTimerScript
+{
+//	paused = true
+//	pause_var = UTS_PAUSE
+	rand_var = varname=xx, min=0, max=50, key=at_post
+	rand_var = varname=yy, min=80, max=150, key=at_post
+
+	event = var=VISIT_POINT, val="firstpoint", time=0
+	event = var=VISIT_POINT, val="x=$[xx],y=$[yy],id=$[TCOUNT]",time=1,  amt=100
+	event = var=VISIT_POINT, val="lastpoint", time=2
+}
+
+//pGenPath
+ProcessConfig = pGenPath
+{
+	AppTick = 4
+	CommsTick = 4
+
+	VISIT_RADIUS = 5
+}
+
+//uXMS
+ProcessConfig = uXMS
+{
+	VAR = UPDATE_POINT
+}
+
+// pGenPath config block
+
+

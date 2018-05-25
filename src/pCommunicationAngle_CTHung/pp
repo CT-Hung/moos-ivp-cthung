@@ -1,0 +1,10 @@
+uPokeDB NAV_X=100.0 pCommunicationAngle_CTHung.moos
+uPokeDB NAV_Y=100.0 pCommunicationAngle_CTHung.moos
+uPokeDB NAV_DEPTH=1000.0 pCommunicationAngle_CTHung.moos
+uPokeDB NAV_HEADING=45.0 pCommunicationAngle_CTHung.moos
+uPokeDB NAV_SPEED=10 pCommunicationAngle_CTHung.moos
+uPokeDB collaborator_NAV_X=4000.0 pCommunicationAngle_CTHung.moos
+uPokeDB collaborator_NAV_Y=4500.0 pCommunicationAngle_CTHung.moos
+uPokeDB collaborator_NAV_DEPTH=800.0 pCommunicationAngle_CTHung.moos
+uPokeDB collaborator_NAV_HEADING=180.0 pCommunicationAngle_CTHung.moos
+uPokeDB collaborator_NAV_SPEED=10.0 pCommunicationAngle_CTHung.moos

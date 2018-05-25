@@ -1,0 +1,9 @@
+//------------------------------------------------
+// pTrilateration config block
+
+ProcessConfig = pTrilateration
+{
+   AppTick   = 4
+   CommsTick = 4
+}
+

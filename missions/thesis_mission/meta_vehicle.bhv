@@ -1,0 +1,132 @@
+//---------------------------------------------------
+// Helm Behavior file 
+
+initialize   DEPLOY  = false
+initialize   RETURN  = false
+initialize   KEEP    = false
+initialize   SURVEY  = true
+
+set MODE = ACTIVE {
+  DEPLOY = true
+} INACTIVE
+
+
+set MODE = RETURNING {
+  MODE = ACTIVE
+  RETURN = true
+} 
+
+set MODE = CHECKING {
+  MODE = ACTIVE
+  START_CHECK = true
+} 
+
+set MODE = STABLEING {
+  MODE = ACTIVE
+  STABLE = true
+}
+
+set MODE = MOVING {
+  MODE = ACTIVE
+  KEEP = true
+  START_CHECK = false
+}
+
+set MODE = SURVEYING {
+  MODE = ACTIVE
+  SURVEY = true
+}
+
+//----------------------------------------------
+Behavior = BHV_Waypoint
+{ 
+  name      = waypt_survey
+  pwt       = 100
+  condition = MODE==SURVEYING
+  endflag   = RETURN = true
+
+  updates    = WPT_UPDATE
+  perpetual  = true
+  templating = clone
+
+                lead = 8
+         lead_damper = 1
+       lead_to_start = true
+               speed = 1.2   // meters per second
+        capture_line = true
+      capture_radius = 5.0
+         slip_radius = 3.0
+	efficiency_measure = all
+             polygon = pts={10, 65: 50, 65: 50, 30: 10, 30}
+            //   order = reverse
+              repeat = 0
+             wptflag = KEEP = true
+             wptflag = SURVEY = false
+             wptflag = STABLE = true
+
+// uPokeDB alpha.moos++ WPT_UPDATE="name=1#polygon=60,-50 : 60,-170 : 150,-170 : 180,-110 : 150,-50#duration=20"
+// uPokeDB alpha.moos++ WPT_UPDATE="name=1#speed=2"
+
+//	ipf_type = roc
+
+    visual_hints = nextpt_color=yellow
+    visual_hints = nextpt_vertex_size=8
+    visual_hints = nextpt_lcolor=gray70
+    visual_hints = vertex_color=dodger_blue, edge_color=white
+    visual_hints = vertex_size=5, edge_size=1
+}
+
+
+//----------------------------------------------
+Behavior = BHV_Waypoint
+{
+  name      = waypt_return
+  pwt       = 100
+  updates   = RETURN_UPDATES
+  condition = MODE==RETURNING
+  endflag   = DEPLOY = false
+
+
+      speed = 0.5
+     radius = 3.0
+  nm_radius = 15.0
+     points = $(START_POS)
+     repeat = 10
+       lead = 8
+}
+
+//--------------------------------------------
+Behavior = BHV_StationKeep
+{
+  name      = keep_stable
+  pwt       = 100
+  condition = MODE==STABLEING
+  perpetual = true
+  duration  = 5
+  duration_reset = KEEP = false
+  endflag = STABLE = false
+  endflag = START_CHECK = true
+  center_activate = true
+}
+
+//-----------------------------------------------
+Behavior = BHV_StationKeep
+{
+  name      = keep_check
+  pwt       = 100
+  condition = MODE==CHECKING
+  perpetual = true
+  center_activate = true
+}
+
+//-----------------------------------------------
+Behavior = BHV_Timer
+{
+  name = move_next_pt
+  pwt = 100
+  condition = MODE==MOVING
+  perpetual = true
+  duration = 1
+  endflag = KEEP = false
+  endflag = SURVEY = true
+}

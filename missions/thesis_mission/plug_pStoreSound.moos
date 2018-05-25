@@ -1,0 +1,16 @@
+ProcessConfig = pStoreSound
+{
+  AppTick = 10
+  CommsTick = 10
+  PATH = /home/cthung/
+  SAMPLE_RATE = 48000
+  SEND_SIZE = 4800
+  CHANNELS = 2 
+  RECORD_DEVICE = hw:1,0
+  FRAMES = 4800 
+  BITS = 16
+  RECORD_TIME = 3
+  PASS_TIME = 5
+  REPEAT = false
+}
+

@@ -1,0 +1,27 @@
+//------------------------------------------------
+// pCommunicationAngle_CTHung config block
+ServerHost = 18.38.2.158
+ServerPort = 9011
+Community = Spermwhale
+ProcessConfig = ANTLER
+{
+	MSBetweenLaunches = 200
+
+	Run = uXMS @NewConsole = true
+	Run = pCommunicationAngle_CTHung @NewConcole = false
+}
+
+ProcessConfig = uXMS
+{
+	VAR = ACOUSTIC_PATH, CONNECTIVITY_LOCATION
+	VAR = ACOUSTIC_PATH_REF, CONNECTIVITY_LOCATION_REF
+	VAR = NAV_X, NAV_Y, NAV_DEPTH
+	VAR = COLLABORATOR_NAME, NEPTUNE_NAV_Y, NEPTUNE_NAV_DEPTH, NEPTUNE_NAV_X
+}
+
+ProcessConfig = pCommunicationAngle_CTHung
+{
+   AppTick   = 4
+   CommsTick = 4
+}
+

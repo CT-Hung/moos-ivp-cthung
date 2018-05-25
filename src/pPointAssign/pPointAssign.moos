@@ -1,0 +1,29 @@
+ServerHost = localhost
+ServerPost = 9000
+Community = ooo
+
+ProcessConfig = ANTLER
+{
+	Run = MOOSDB @ NewConsole = false
+	Run = pPointAssign @ NewConsole = false
+	Run = uXMS @ NewConsole = true
+}
+
+ProcessConfig = uXMS
+{
+	AppTick = 4
+	Commstick = 4
+	VAR = VISIT_POINT_KK, VISIT_POINT_CC
+}
+//------------------------------------------------
+// pPointAssign config block
+
+ProcessConfig = pPointAssign
+{
+   AppTick   = 4
+   CommsTick = 4
+	 assign_by_region = true
+	 VNAME = henry
+	 VNAME = gilda
+}
+

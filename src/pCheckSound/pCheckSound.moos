@@ -1,0 +1,39 @@
+//------------------------------------------------
+// pCheckSound config block
+
+ServerHost = localhost
+ServerPort = 9000
+Community = test
+
+ProcessConfig = ANTLER
+{
+  Run = MOOSDB         @NewConsole = false
+  Run = pCheckSound    @NewConsole = true
+  Run = pStoreSound    @NewConsole = true
+}
+
+ProcessConfig = pCheckSound
+{
+   AppTick   = 10
+   CommsTick = 10
+   BITS = 16
+   SEN = -100
+   MAX_SEL = 160
+   SEL_DURATION = 0.3
+}
+
+ProcessConfig = pStoreSound
+{
+   AppTick   = 10
+   CommsTick = 10
+  PATH = /home/cthung/
+  SAMPLE_RATE = 48000
+  SEND_SIZE = 4800
+  CHANNELS = 2
+  RECORD_DEVICE = hw:1,0
+  BITS = 16
+  RECORD_TIME = 3
+  PASS_TIME = 5
+  FRAMES = 4800
+  REPEAT = false
+}

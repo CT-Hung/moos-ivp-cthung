@@ -1,0 +1,9 @@
+ProcessConfig = pCheckSound
+{
+  AppTick = 10
+  CommsTick = 10
+  BITS = 16
+  SEN = -100
+  MAX_SEL = 150
+  SEL_DURATION = 0.3
+}
