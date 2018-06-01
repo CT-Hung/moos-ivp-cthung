@@ -15,5 +15,8 @@ ProcessConfig = pPlayAudio
 {
    AppTick   = 1
    CommsTick = 1
+    SH_FILE = ./play.sh
+//    PLAY_INF = false
+//    PLAY_TIMES = 3
 }
 

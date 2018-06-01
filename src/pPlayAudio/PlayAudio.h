@@ -29,24 +29,13 @@ class PlayAudio : public AppCastingMOOSApp
  protected:
    void registerVariables();
 
- protected:
-   void setPlayParams();
-   void PlayBack();
 
  private: // Configuration variables
-   std::string m_playBackDevice;
-   snd_pcm_t *m_handle;
-   snd_pcm_hw_params_t *m_params;
-   snd_pcm_uframes_t m_frames;
-   unsigned int m_sampleRate;
-   unsigned int m_channels;
-   unsigned int m_playTime;
-   unsigned int m_loops;
-   unsigned int m_period_size;
-   int m_dir;
-   int m_bits;
-   char *m_period_buffer;
-
+    std::string m_sh_file;
+    std::string m_start_play;
+    std::string m_play_inf;
+    double m_times;
+    double m_play_times;
  private: // State variables
 };
 
