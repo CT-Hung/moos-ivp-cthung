@@ -1,1 +1,0 @@
-/usr/bin/c++    -fPIC -g   CMakeFiles/pGenPath.dir/GenPath.cpp.o CMakeFiles/pGenPath.dir/GenPath_Info.cpp.o CMakeFiles/pGenPath.dir/main.cpp.o CMakeFiles/pGenPath.dir/GetPosition.cpp.o  -o ../../../bin/pGenPath  -L/home/ual/moos-ivp/lib -rdynamic /home/ual/moos-ivp/build/MOOS/MOOSCore/lib/libMOOS.a -lgeometry -lmbutil -lm -lpthread -Wl,-rpath,/home/ual/moos-ivp/lib 
