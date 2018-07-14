@@ -1,0 +1,1 @@
+/usr/bin/c++    -fPIC -g   CMakeFiles/pPlayAudio.dir/PlayAudio.cpp.o CMakeFiles/pPlayAudio.dir/PlayAudio_Info.cpp.o CMakeFiles/pPlayAudio.dir/main.cpp.o  -o ../../../bin/pPlayAudio  -L/home/ual/moos-ivp/lib -rdynamic /home/ual/moos-ivp/build/MOOS/MOOSCore/lib/libMOOS.a -lapputil -lmbutil -lm -lpthread -lasound -Wl,-rpath,/home/ual/moos-ivp/lib 
