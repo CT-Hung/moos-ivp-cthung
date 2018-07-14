@@ -165,7 +165,7 @@ void PlayAudio::play()
         if(m_play_times == m_times){
             m_play_times = 0;
             m_start_play = "false";
-            Notify("FINISH_PLAYING", "true")
+            Notify("FINISH_PLAYING", "true");
         }
       }else{
         m_total_play++;
