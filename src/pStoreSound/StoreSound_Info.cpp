@@ -20,10 +20,11 @@ void showSynopsis()
 {
   blk("SYNOPSIS:                                                       ");
   blk("------------------------------------                            ");
+  blk("  Need to install libasound2-dev first.                         ");
   blk("  The pStoreSound application is used for recording sound.      ");
   blk("  It will create a folder at the pointing path which is set by  ");
   blk("  user. The record file will be saved as a .bin file in the folder");
-  blk("  The default path is /home/cthung/moos-ivp-cthung/.            ");
+  blk("  The default path is ~/moos-ivp-cthung/.                       ");
   blk("------------------------------------                            ");
 }
 
