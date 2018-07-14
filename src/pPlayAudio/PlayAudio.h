@@ -28,14 +28,24 @@ class PlayAudio : public AppCastingMOOSApp
 
  protected:
    void registerVariables();
+   void play();
 
 
  private: // Configuration variables
     std::string m_sh_file;
     std::string m_start_play;
-    std::string m_play_inf;
+
     double m_times;
     double m_play_times;
+    double m_play_duration;
+    double m_start_time;
+    double m_end_time;
+
+    bool m_flag_duration;
+    bool m_play_inf;
+
+    int m_total_play;
+
  private: // State variables
 };
 

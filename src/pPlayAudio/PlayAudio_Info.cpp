@@ -20,10 +20,10 @@ void showSynopsis()
 {
   blk("SYNOPSIS:                                                       ");
   blk("------------------------------------                            ");
-  blk("  The pPlayAudio application is used for               ");
-  blk("                                                                ");
-  blk("                                                                ");
-  blk("                                                                ");
+  blk("  The pPlayAudio application is used for playing audio.         ");
+  blk("  Need to create a script file first. play.sh is a example.     ");
+  blk("  The script file includes aplay app.                           ");
+  blk("  U can type aplay -h on command line to get the info of params.");
   blk("                                                                ");
 }
 
@@ -71,9 +71,11 @@ void showExampleConfigAndExit()
   blk("                                                                ");
   blk("ProcessConfig = pPlayAudio                              ");
   blk("{                                                               ");
-  blk("  AppTick   = 4                                                 ");
-  blk("  CommsTick = 4                                                 ");
-  blk("                                                                ");
+  blk("  AppTick   = 10                                                ");
+  blk("  CommsTick = 10                                                ");
+  blk("  sh_file = ./play.sh                                           ");
+  blk("  play_time = 3 defalut is infinite playing.                    ");
+  blk("  duration = 2  default is 0                                    ");
   blk("}                                                               ");
   blk("                                                                ");
   exit(0);
@@ -94,12 +96,11 @@ void showInterfaceAndExit()
   blk("                                                                ");
   blk("SUBSCRIPTIONS:                                                  ");
   blk("------------------------------------                            ");
-  blk("  NODE_MESSAGE = src_node=alpha,dest_node=bravo,var_name=FOO,   ");
-  blk("                 string_val=BAR                                 ");
+  blk("  PLAY_AUDIO=true                                               ");
   blk("                                                                ");
   blk("PUBLICATIONS:                                                   ");
   blk("------------------------------------                            ");
-  blk("  Publications are determined by the node message content.      ");
+  blk("  FINISH_PLAYING=true                                           ");
   blk("                                                                ");
   exit(0);
 }

@@ -13,10 +13,10 @@ ProcessConfig = ANTLER
 
 ProcessConfig = pPlayAudio
 {
-   AppTick   = 1
-   CommsTick = 1
+   AppTick   = 10
+   CommsTick = 10
     SH_FILE = ./play.sh
-//    PLAY_INF = false
-//    PLAY_TIMES = 3
+    PLAY_TIMES = 3
+    duration = 2
 }
 
