@@ -1,0 +1,9 @@
+//------------------------------------------------
+// pBearingAngle config block
+
+ProcessConfig = pBearingAngle
+{
+   AppTick   = 4
+   CommsTick = 4
+}
+
