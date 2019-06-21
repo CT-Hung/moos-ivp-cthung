@@ -20,8 +20,8 @@ Processconfig = ANTLER
   Run = pBasicContactMgr @ NewConsole = false
   Run = uFldNodeBroker   @ NewConsole = false
   Run = pDeadManPost     @ NewConsole = false
-  Run = pCheckSound      @ NewConsole = false
-  Run = pStoreSound      @ NewConsole = false
+//  Run = pCheckSound      @ NewConsole = false
+//  Run = pStoreSound      @ NewConsole = false
 #ifdef SIM 
   Run = uSimMarine       @ NewConsole = false
 #elseifdef VMODEL M300

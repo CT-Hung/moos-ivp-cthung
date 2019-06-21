@@ -1,0 +1,109 @@
+//---------- FILE: bravo.bhv -----------
+
+initialize  DEPLOY = false
+initialize  RETURN = false
+initialize  LOITER_REGION = west
+
+//-------------------------------
+set MODE = WEST{
+	DEPLOY = true
+	RETURN != true
+	LOITER_REGION = west
+}
+set MODE = EAST{
+	DEPLOY = true
+	RETURN != true
+	LOITER_REGION = east
+}
+
+//-------------------------------
+Behavior = BHV_Loiter
+{
+	name = waypt_loiter_west
+	pwt = 100
+	condition = MODE==WEST
+	endflag = LOITER_REGION=east
+
+	updates = WPT_UPDATE
+	perpetual = true
+	speed = 2.5
+	capture_radius = 5.0
+	slip_radius = 10.0
+	clockwise = false
+	duration = 150
+	duration_reset = LOITER_REGION  = west
+
+	polygon = format = radial, label=bravo, x=100, y=-75, radius=30, pts=8, snap=1
+
+	visual_hints = nextpt_color=yellow
+	visual_hints = nextpt_vertex_size=8
+	visual_hints = nextpt_lcolor=gray70
+	visual_hints = vertex_color=dodger_biue, edge_color=wite
+	visual_hints = vertex_size=5, edge_size=1
+}
+
+Behavior = BHV_Loiter
+{
+	name = waypt_loiter_east
+	pwt = 100
+	condition = MODE==EAST
+	endflag = LOITER_REGION=west
+
+	updates = WPT_UPDATE
+	perpetual = true
+	speed = 2.5
+	capture_radius = 5.0
+	slip_radius = 10.0
+	clockwise = false
+	duration = 150
+	duration_reset = LOITER_REGION  = east
+
+	polygon = format = radial, label=bravo, x=160, y=-50, radius=20, pts=8, snap=1
+
+	visual_hints = nextpt_color=yellow
+	visual_hints = nextpt_vertex_size=8
+	visual_hints = nextpt_lcolor=gray70
+	visual_hints = vertex_color=dodger_biue, edge_color=wite
+	visual_hints = vertex_size=5, edge_size=1
+}
+//---------------------------------
+Behavior=BHV_Waypoint
+{
+	name = wypt_return
+	pwt = 100
+	condition = RETURN = true
+	condition = DEPLOY = true
+	perpetual = true
+	updates = RETURN_UPDATE
+	endflag = RETURN = false
+	endflag = DEPLOY = false
+	endflag = MISSION = complete
+	speed = 2.5
+	capture_radius = 2.0
+	slip_radius = 0
+	points = 0,0
+}
+
+//--------------------------------
+Behavior = BHV_ConstantDepth
+{
+	name = const_dep_west
+	pwt = 100
+	condition = MODE==WEST
+	updates = CONST_DEP_WEST
+	perpetual = true
+	depth = 30
+	duration = 150
+	duration_reset = LOITER_REGION = west
+}
+Behavior = BHV_ConstantDepth
+{
+	name = const_dep_east
+	pwt = 100
+	condition = MODE==EAST
+	updates = CONST_DEP_EAST
+	perpetual = true
+	depth = 10
+	duration = 150
+	duration_reset = LOITER_REGION = east
+}
